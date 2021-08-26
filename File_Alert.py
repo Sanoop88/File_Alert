@@ -33,8 +33,8 @@ radio4.grid(row=4,column=3,sticky='w')
 messagebox.showerror('Connection check','Please ensure you have access to the folders before proceeding')
 
 
-path1='/Users/videoqa/Desktop/xfer ad/encoded/music'
-path2='/Users/videoqa/Desktop/xfer ad/Complete'
+path1=''#define your paths here
+path2=''#define your paths here
 
 
 
@@ -47,28 +47,28 @@ Flag=True
 
 def folder_1():
     #you can define the file extensions you wish to track here, I'm using this to track (mp4, mov, mpg)
-    mp4ads=len(fnmatch.filter(os.listdir(path1), '*.mp4'))
-    movads=len(fnmatch.filter(os.listdir(path1), '*.mov'))
-    mpgads=len(fnmatch.filter(os.listdir(path1), '*.mpg'))
-    totalads=mp4ads+movads+mpgads
+    mp4=len(fnmatch.filter(os.listdir(path1), '*.mp4'))
+    mov=len(fnmatch.filter(os.listdir(path1), '*.mov'))
+    mpg=len(fnmatch.filter(os.listdir(path1), '*.mpg'))
+    total=mp4+mov+mpg
 
-    if totalads==0:
+    if total==0:
         pass
-    elif totalads==1:
+    elif total==1:
         os.system('Say "One File"')
     else:
-        os.system('Say %s Files' %(totalads))
+        os.system('Say %s Files' %(total))
 def folder_2():
     #file extensions for second folder
-    movmusic=len(fnmatch.filter(os.listdir(path2), '*.mov'))
-    mpgmusic=len(fnmatch.filter(os.listdir(path2), '*.mpg'))
-    totalmusic=movmusic+mpgmusic
-    if totalmusic==0:
+    mov=len(fnmatch.filter(os.listdir(path2), '*.mov'))
+    mpg=len(fnmatch.filter(os.listdir(path2), '*.mpg'))
+    total=mov+mpg
+    if total==0:
         pass
-    elif totalmusic==1:
+    elif total==1:
         os.system('Say "One item"')
     else:
-        os.system('Say %s items' %(totalmusic))
+        os.system('Say %s items' %(total)
 
 test=None        
 def start():
